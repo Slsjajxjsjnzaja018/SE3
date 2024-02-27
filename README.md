@@ -3241,7 +3241,8 @@ spawn(function()
                     'Killua',
 
                     'Ichigo',
-                    'Choso'
+                    'Choso',
+		    'Natsu'
 		    
 
                 }
@@ -3383,7 +3384,8 @@ spawn(function()
                     'Killua',
 
                     'Ichigo',
-                    'Choso'
+                    'Choso',
+		    'Natsu'
 		    
 
                 }
