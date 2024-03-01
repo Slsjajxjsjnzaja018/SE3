@@ -3242,7 +3242,8 @@ spawn(function()
 
                     'Ichigo',
                     'Choso',
-		    'Natsu'
+		    'Natsu',
+                    'Gilgamesh'
 		    
 
                 }
@@ -3385,7 +3386,8 @@ spawn(function()
 
                     'Ichigo',
                     'Choso',
-		    'Natsu'
+		    'Natsu',
+                    'Gilgamesh'
 		    
 
                 }
