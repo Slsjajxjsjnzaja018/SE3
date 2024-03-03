@@ -849,7 +849,7 @@ for i,v in pairs(game:GetService("Workspace").ItemDrop:GetChildren()) do
 
 
 Tab:AddToggle({
-	Name = "Auto Chests",
+	Name = "Auto Chests TP",
 	Default = false,
 	Callback = function(d)
 _G.Fd = d
