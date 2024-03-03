@@ -105,7 +105,7 @@ local Section = Tab:AddSection({
 Tab:AddToggle({
 	Name = "Auto Z X C V",
 	Default = false,
-	Callback = function()
+	Callback = function(he)
 	        _G.EZo = he
         while _G.EZo do wait()
 game:service('VirtualInputManager'):SendKeyEvent(true, "Z", false, game)
