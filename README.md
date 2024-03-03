@@ -847,6 +847,25 @@ for i,v in pairs(game:GetService("Workspace").ItemDrop:GetChildren()) do
 	end    
 })
 
+
+Tab:AddToggle({
+	Name = "Auto Chests TP",
+	Default = false,
+	Callback = function(Lp)
+	    _G.Ca = LP
+	    while _G.Ca do wait()
+for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
+if v.ClassName == "ProximityPrompt" then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+fireproximityprompt(v,30)
+end
+end
+	end    
+})
+
+
+
+
 Tab:AddButton({
 	Name = "boost fps",
 	Callback = function()
@@ -925,6 +944,5 @@ w.DescendantAdded:Connect(function(v)
         end)
   	end    
 })
-
 
 
