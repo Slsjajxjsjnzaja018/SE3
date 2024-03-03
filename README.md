@@ -860,6 +860,7 @@ if v.ClassName == "ProximityPrompt" then
 fireproximityprompt(v,30)
 end
 end
+end
 	end    
 })
 
