@@ -849,18 +849,18 @@ for i,v in pairs(game:GetService("Workspace").ItemDrop:GetChildren()) do
 
 
 Tab:AddToggle({
-	Name = "Auto Chests TP",
+	Name = "Auto Chests",
 	Default = false,
-	Callback = function(Lp)
-	    _G.Ca = LP
-	    while _G.Ca do wait()
+	Callback = function(d)
+_G.Fd = d
+while _G.Fd do wait()
 for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
 if v.ClassName == "ProximityPrompt" then
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
 fireproximityprompt(v,30)
+game.Players.LocalPlayer.Character.HumanoidRootPart .CFrame = v.Parent.CFrame
 end
-end
-end
+      end
+            end
 	end    
 })
 
