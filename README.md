@@ -1,4 +1,4 @@
-_G.AutoHaki = Haki
+
 while _G.AutoHaki do wait()
 pcall(function()
 local aa = game.Players.LocalPlayer.Character.HumanoidRootPart
