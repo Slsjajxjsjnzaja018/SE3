@@ -949,6 +949,11 @@ w.DescendantAdded:Connect(function(v)
   	end    
 })
 
+Tab:AddToggle({
+	Name = "Auto Haki",
+	Default = false,
+	Callback = function(Haki)
+_G.AutoHaki = Haki
 while _G.AutoHaki do wait()
 pcall(function()
 local aa = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -966,3 +971,7 @@ game:GetService("ReplicatedStorage").Remotes.SkillHolder:FireServer(unpack(args)
 end
 end)
 end
+
+	end    
+})
+
