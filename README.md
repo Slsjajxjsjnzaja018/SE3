@@ -946,4 +946,22 @@ w.DescendantAdded:Connect(function(v)
   	end    
 })
 
+_G.AutoHaki = Haki
+while _G.AutoHaki do wait()
+pcall(function()
+local aa = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+if not aa:FindFirstChild("Haki") then
+local args = {
+    [1] = "BusoHaki"
+}
+game:GetService("ReplicatedStorage").Remotes.SkillHolder:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "KenHaki"
+}
+game:GetService("ReplicatedStorage").Remotes.SkillHolder:FireServer(unpack(args))
+end
+end)
+end
 
