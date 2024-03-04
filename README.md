@@ -747,7 +747,7 @@ Tab:AddToggle({
 })
 
 Tab:AddToggle({
-	Name = "Auto Random Fruit Gem Select",
+	Name = "Auto Random Fruit Beli Select",
 	Default = false,
 	Callback = function(Fr)
 	_G.FruitB = Fr
