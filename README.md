@@ -394,7 +394,8 @@ spawn(function()
                     'Ichigo',
                     'Choso',
 	           	      'Natsu',
-                    'Gilgamesh'
+                    'Gilgamesh',
+		    'Tatsumaki'
 		    
 
                 }
@@ -475,6 +476,7 @@ spawn(function()
                     'Sukuna',
                     'Artoria',
                     'Uraume',
+		    'Tatsumaki'
 		    
 
                 }
