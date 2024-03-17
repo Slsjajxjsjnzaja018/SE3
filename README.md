@@ -396,7 +396,7 @@ spawn(function()
 	           	      'Natsu',
                     'Gilgamesh',
 		    'Tatsumaki',
-      'Frieren Clone'
+      'Frieren'
 		    
 
                 }
@@ -478,7 +478,7 @@ spawn(function()
                     'Artoria',
                     'Uraume',
 		    'Tatsumaki',
-      'Frieren Clone'
+      'Frieren'
 		    
 
                 }
