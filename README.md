@@ -1,7 +1,3 @@
-
-
-
-------------------ฟังชั่นต่างๆ------------------------------------------------------
 function CA()
 for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
 if v.ClassName == "ProximityPrompt" then
@@ -27,52 +23,279 @@ if not game:GetService("Players"):GetPlayerFromCharacter(model) then -- if not p
 		end)
 end
 
+function TP(CFrame)
+    pcall(function()
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame
+    end)
+end
+
 No()
-------------------------------------------------------------------------------------------
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/LPO081/Ui-or/main/README.md')))()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
 
-local Window = OrionLib:MakeWindow({
-		Name = "[ VIP ] SSS HUB [Shadow] Second Piece",
-		HidePremium = false,
-		SaveConfig = true,
-		ConfigFolder = "OrionTest",
-        IntroText = "BY NOOB-SCRIPT V2"       
-}) 
-
-local Tab = Window:MakeTab({
-	Name = "| Equip Weapon",
-	Icon = "rbxassetid://7733765398",
-	PremiumOnly = false
+local Window = redzlib:MakeWindow({
+  Title = "Siron Hub : Second piece",
+  SubTitle = "Dev : Siron Hub",
+  SaveFolder = "testando | redz lib v5.lua"
 })
 
-local Section = Tab:AddSection({
-	Name = "Weapon"
+local Tab1 = Window:MakeTab({"Settings", "swords"}) -- ok
+local Tab3 = Window:MakeTab({"Auto Farm Raid", "swords"}) --ok
+local Tab2 = Window:MakeTab({"Auto Farm", "swords"}) -- ok
+local Tab4 = Window:MakeTab({"Up Stats", "swords"}) -- ok
+local Tab6 = Window:MakeTab({"Players", "swords"}) -- ok
+local Tab7 = Window:MakeTab({"Random Fruit","swords"})
+local Tab5 = Window:MakeTab({"Teleport", "swords"}) -- ok
+
+
+local Section1 = Tab1:AddSection({"Boots FPS"})
+Tab1:AddButton({"Boots FPS",function()
+     local decalsyeeted = true 
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+sethiddenproperty(l,"Technology",2)
+sethiddenproperty(t,"Decoration",false)
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = 0
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(w:GetDescendants()) do
+    if v:IsA("BasePart") and not v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif (v:IsA("Decal") or v:IsA("Texture")) and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+       v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") and decalsyeeted then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    elseif v:IsA("SpecialMesh") and decalsyeeted  then
+        v.TextureId=0
+    elseif v:IsA("ShirtGraphic") and decalsyeeted then
+        v.Graphic=0
+    elseif (v:IsA("Shirt") or v:IsA("Pants")) and decalsyeeted then
+        v[v.ClassName.."Template"]=0
+    end
+end
+for i = 1,#l:GetChildren() do
+    e=l:GetChildren()[i]
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+w.DescendantAdded:Connect(function(v)
+    wait()--prevent errors and shit
+   if v:IsA("BasePart") and not v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") and decalsyeeted then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    elseif v:IsA("SpecialMesh") and decalsyeeted then
+        v.TextureId=0
+    elseif v:IsA("ShirtGraphic") and decalsyeeted then
+        v.ShirtGraphic=0
+    elseif (v:IsA("Shirt") or v:IsA("Pants")) and decalsyeeted then
+        v[v.ClassName.."Template"]=0
+            		end
+            end)
+	end
 })
---------------------tableอาวุธ--------------------
+
+local Se2 = Tab1:AddSection({"Function skill"})
+local Toggle = Tab1:AddToggle({
+  Name = "Z",
+  Default = false,
+  Callback = function(po)
+  _G.hr = po
+  while _G.hr do wait ()
+  game:service('VirtualInputManager'):SendKeyEvent(true, "Z", false, game)
+  end
+  end
+})
+local Toggle = Tab1:AddToggle({
+  Name = "X",
+  Default = false,
+  Callback = function(ho)
+  _G.t = ho
+  while _G.t do wait()
+  game:service('VirtualInputManager'):SendKeyEvent(true, "X", false, game)
+  end
+  end
+})
+local Toggle = Tab1:AddToggle({
+  Name = "C",
+  Default = false,
+  Callback = function(fo)
+  _G.mk = fo
+  while _G.t do wait()
+  game:service('VirtualInputManager'):SendKeyEvent(true, "C", false, game)
+  end
+  end
+})
+local Toggle = Tab1:AddToggle({
+  Name = "V",
+  Default = false,
+  Callback = function(mo)
+  _G.uim = mo
+  while _G.uim do wait()
+  game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
+  end
+  end
+})
+local Seos = Tab1:AddSection({"Haki"})
+local Toggle2 = Tab1:AddToggle({
+  Name = "Auto Haki",
+  Default = false,
+  Callback = function(dd)
+  _G.AutoHaki = Haki
+while _G.AutoHaki do wait()
+pcall(function()
+local aa = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+if not aa:FindFirstChild("Haki") then
+local args = {
+    [1] = "BusoHaki"
+}
+game:GetService("ReplicatedStorage").Remotes.SkillHolder:FireServer(unpack(args))
+end
+end)
+end
+  end
+})
+local Seos = Tab1:AddSection({"Chest"})
+local Toggle2 = Tab1:AddToggle({
+  Name = "Auto Chest",
+  Default = false,
+  Callback = function(dd)
+  _G.Fdd = dd
+    while _G.Fdd do 
+        wait()
+        for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
+            if v.ClassName == "ProximityPrompt" then
+                fireproximityprompt(v,30)
+            end
+        end
+    end
+  end
+})
+local Toggle2 = Tab1:AddToggle({
+  Name = "Auto Chest TP",
+  Default = false,
+  Callback = function(d)
+  _G.Fd = d
+    while _G.Fd do 
+        wait()
+        for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
+            if v.ClassName == "ProximityPrompt" then
+                fireproximityprompt(v,30)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+            end
+        end
+    end
+  end
+})
+
+local Se2 = Tab3:AddSection({"Raid"})
+Tab3:AddSlider({
+  Name = "Distance",
+  Min = 1,
+  Max = 50,
+  Increase = 1,
+  Default = 5,
+  Callback = function(joo)
+    _G.Di = joo
+  end
+})
+
+Tab3:AddButton({"Teleprot to Portal",function()
+for i,v in pairs(game:GetService("Workspace").World.Portal:GetDescendants()) do
+if v.ClassName == "ProximityPrompt" then
+game.Players.LocalPlayer.Character.HumanoidRootPart .CFrame = v.Parent.CFrame
+wait(0.1)
+fireproximityprompt(v,30)
+end
+      end
+   end
+})
+local Toggle2 = Tab3:AddToggle({
+  Name = "Auto Raid",
+  Default = false,
+  Callback = function(aii)
+  _G.Raid = aii
+  end
+})
+
+spawn(function()
+    while wait() do 
+        pcall(function()
+            if _G.Raid then
+                for _,v in pairs(game:GetService("Workspace").Lives:GetDescendants()) do
+                    if v.ClassName == "Model" and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health >= 1 then
+                        local player = game:GetService("Players"):GetPlayerFromCharacter(v)
+                        if not player then
+                            repeat 
+                                wait()
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,_G.Di)
+                            until _G.Raid == false or v.Humanoid.Health <= 0
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+local Section = Tab2:AddSection({"Weapon"})
+
+
+-- local Paragraph = Tab2:AddParagraph({"Paragraph", "This is a Paragraph\nSecond Line"})
 local Weaponlist = {}
 local Weapon = nil
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
     table.insert(Weaponlist,v.Name)
     end
-------------------------------------------------------------
 
-Tab:AddDropdown({
-	Name = "Select Weapon",
-	Default = "1",
-	Options = Weaponlist,
-	Callback = function(v)
-	_G.Weapon = v
-	end    
+local Dropdown = Tab2:AddDropdown({
+  Name = "Select Weapon",
+  Description = "เลือกอาวุธที่ต้องการใช้",
+  Options = Weaponlist,
+  Default = nil,
+  Flag = "...",
+  Callback = function(vu)
+    _G.Weapon = vu
+  end
 })
 
-Tab:AddToggle({
-	Name = "Auto Equip Weapon",
-	Default = false,
-	Callback = function(a)
-	_G.AutoEquiped = a
-	end    
+local Toggle2 = Tab2:AddToggle({
+  Name = "Auto Equip",
+  Default = false,
+  Callback = function(a)
+  _G.AutoEquiped = a
+  end
 })
-
 spawn(function()
 while wait() do
 if _G.AutoEquiped then
@@ -81,64 +304,83 @@ game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players")
 end)
 end
 end
-end)    
+end) 
 
 
-local Section = Tab:AddSection({
-	Name = "Auto Attack"
+local Attacking = false
+local AutoAttackToggle = false
+local Toggle2 = Tab2:AddToggle({
+  Name = "Auto Attack [ Fix Bug ]",
+  Default = false,
+  Callback = function(autoattack)
+  Attacking = autoattack
+        AutoAttackToggle = autoattack
+  end
 })
-
-
-Tab:AddToggle({
-	Name = "Auto Attack",
-	Default = false,
-	Callback = function(ah)
-	_G.Ato = ah
-while _G.Ato do wait()
-game:GetService'VirtualUser':CaptureController()
-game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+local function PerformAutoAttack()
+    while true do
+        if AutoAttackToggle and Attacking then
+            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
+            wait(0.3)
+        end
+        wait(0.1)
+    end
 end
-	end    
-})
 
-local Section = Tab:AddSection({
-	Name = " "
-})
+spawn(PerformAutoAttack)
 
-Tab:AddToggle({
-	Name = "Auto Z X C V",
-	Default = false,
-	Callback = function(he)
-	        _G.EZo = he
-        while _G.EZo do wait()
-game:service('VirtualInputManager'):SendKeyEvent(true, "Z", false, game)
-game:service('VirtualInputManager'):SendKeyEvent(true, "X", false, game)
-game:service('VirtualInputManager'):SendKeyEvent(true, "C", false, game)
-game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
+local function HandleCharacterAdded()
+    game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        Attacking = false
+    end)
 end
-	end    
-})
 
+local function HandleCharacterRemoving()
+    game.Players.LocalPlayer.CharacterRemoving:Connect(function()
+        Attacking = false
+    end)
+end
 
-local Tab = Window:MakeTab({
-	Name = "• Auto Farm Level",
-	Icon = "rbxassetid://16591537806",
-	PremiumOnly = false
-})
+HandleCharacterAdded()
+HandleCharacterRemoving()
 
+spawn(function()
+    while true do
+        if game.Players.LocalPlayer.Character then
+            local humanoid = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+            if humanoid then
+                if humanoid.Health <= 0 then
+                    Attacking = false
+                elseif humanoid.Health > 0 then
+                    wait(1.5)
+                    Attacking = true
+                end
+            end
+        end
+        wait(0.1)
+    end
+end)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
+    if Attacking then
+        toggleAutoAttack(true)
+    end
+end)
+local Section = Tab2:AddSection({"Auto Farm Quest"})
 Quest = {}
 for i,v in pairs(workspace.Quest:GetDescendants()) do
     if v.Name == "Quest" then
         table.insert(Quest,v.Value)
     end
 end
-
-Tab:AddDropdown({
-	Name = "Select Quest",
-	Default = "1",
-	Options = Quest,
-	Callback = function(text)
-	    Questname = text
+local Dropdown = Tab2:AddDropdown({
+  Name = "Select Quest",
+  Description = "เลือกเควสที่ต้องการจะฟาม",
+  Options = Quest,
+  Default = nil,
+  Flag = "...",
+  Callback = function(text)
+    Questname = text
     function Quest()
         spawn(function()
             _G.Quest = true
@@ -320,30 +562,13 @@ Tab:AddDropdown({
         end)
     end
     end
-
-	end    
+  end
 })
-
-Tab:AddToggle({
-	Name = "Auto Quest",
-	Default = false,
-	Callback = function(value)
-	_G.Quest = value
-    print('Quest: ', value);
-    if value then
-        Quest();
-        _G.Quest = true
-        else
-        _G.Quest = false
-    end
-	end    
-})
-
-Tab:AddToggle({
-	Name = "Auto Equip Weapon",
-	Default = false,
-	Callback = function(value)
-	_G.mobs2 = value
+local Toggle = Tab2:AddToggle({
+  Name = "Auto Farm Quest",
+  Default = false,
+  Callback = function(value)
+  _G.mobs2 = value
     print('mobs2: ', value);
     if value then
         mobs2();
@@ -352,21 +577,76 @@ Tab:AddToggle({
         _G.mobs2 = false
         _G.Quest = false
     end
-	end    
+  end
 })
 
-local Tab = Window:MakeTab({
-	Name = "• Auto Farm Boss",
-	Icon = "rbxassetid://16591537806",
-	PremiumOnly = false
+local Section = Tab2:AddSection({"Auto Farm All"})
+local Toggle = Tab2:AddToggle({
+  Name = "Auto Farm Gem",
+  Default = false,
+  Callback = function(ssn)
+  _G.eam = ssn
+function MonsSpawned(Mons)
+    for _, v in pairs(game:GetService('Workspace').Lives:GetDescendants()) do
+        if v.Name == Mons and v:FindFirstChild('HumanoidRootPart') and v.Humanoid.Health >= 1 then
+            return true
+        end
+    end
+   return false
+end
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.eam then
+local MonNames = {                 
+		'Gojo [Unleashed]',
+		'Sukuna [Half Power]',
+		'Rimuru',
+		'Killua',
+		'Ichigo',
+		'Choso',
+		'Natsu',
+		'Gilgamesh',
+		'Snow Bandit Leader',
+		'Shank',
+		'Monkey King',
+		'Sand Man',
+		'Bomb Man',
+		'Bandit Leader',
+		'Shadow',
+		'Gojo',
+		'Kashimo',
+		'Sukuna',
+		'Artoria',
+		'Uraume',
+		'Tatsumaki',
+		'Frieren'
+
+}
+                
+                for _, v in pairs(game:GetService('Workspace').Lives:GetDescendants()) do
+                    if table.find(MonNames, v.Name) and v:FindFirstChild('HumanoidRootPart') and v.Humanoid.Health >= 1 then
+                       repeat
+
+                        CA()
+                            wait()   
+                            TP(v.HumanoidRootPart.CFrame * CFrame.new(0,0,5))
+                        until _G.eam == false or v.Humanoid.Health <= 0
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+  end
 })
 
-
-Tab:AddToggle({
-    Name = "Auto Farm Boss",
-    Default = false,
-    Callback = function(ssk)
-_G.eami = ssk
+local Toggle = Tab2:AddToggle({
+  Name = "Auto Farm Boss",
+  Default = false,
+  Callback = function(ssk)
+  _G.eami = ssk
 function MonsSpawned(Mons)
     for _, v in pairs(game:GetService('Workspace').Lives:GetDescendants()) do
         if v.Name == Mons and v:FindFirstChild('HumanoidRootPart') and v.Humanoid.Health >= 1 then
@@ -380,37 +660,34 @@ spawn(function()
     while wait() do
        pcall(function()
             if _G.eami then
-                local MonNames = {
-                    'Shadow',
-                    'Gojo',
-                    'Kashimo',
-                    'Sukuna',
-                    'Artoria',
-                    'Uraume',
-		              'Gojo [Unleashed]',
-                    'Sukuna [Half Power]',
-		              'Rimuru',
-                    'Killua',
-                    'Ichigo',
-                    'Choso',
-	           	      'Natsu',
-                    'Gilgamesh',
-		    'Tatsumaki',
-      'Frieren'
-		    
-
-                }
+local MonNamess = {
+	'Shadow',
+	'Gojo',
+	'Kashimo',
+	'Sukuna',
+	'Artoria',
+	'Uraume',
+	'Gojo [Unleashed]',
+	'Sukuna [Half Power]',
+	'Rimuru',
+	'Killua',
+	'Ichigo',
+	'Choso',
+	'Natsu',
+	'Gilgamesh',
+	'Tatsumaki',
+	'Frieren'
+	
+}
 
 
 
                 for _, v in pairs(game:GetService('Workspace').Lives:GetDescendants()) do
-                    if table.find(MonNames, v.Name) and v:FindFirstChild('HumanoidRootPart') and v.Humanoid.Health >= 1 then
+                    if table.find(MonNamess, v.Name) and v:FindFirstChild('HumanoidRootPart') and v.Humanoid.Health >= 1 then
                         repeat
                         CA()
                            wait()   
-                            v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                            v.HumanoidRootPart.Transparency = 0.9
-                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,6)
+                            TP(v.HumanoidRootPart.CFrame * CFrame.new(0,0,5))
                         until _G.eami == false or v.Humanoid.Health <= 0
                     end
                 end
@@ -418,105 +695,20 @@ spawn(function()
         end)
     end
 end)
-
-	end   
+  end
 })
 
-Tab:AddToggle({
-
-    Name = "Auto Farm Gem ",
-
-    Default = false,
-
-    Callback = function(ssn)
 
 
-_G.eam = ssn
+Window:SelectTab(Tab4)
+local Section1 = Tab4:AddSection({"Stats"})
 
-function MonsSpawned(Mons)
-
-    for _, v in pairs(game:GetService('Workspace').Lives:GetDescendants()) do
-
-        if v.Name == Mons and v:FindFirstChild('HumanoidRootPart') and v.Humanoid.Health >= 1 then
-
-            return true
-
-        end
-
-    end
-
-    return false
-
-end
-
-
-
-spawn(function()
-    while wait() do
-        pcall(function()
-            if _G.eam then
-                local MonNames = {
-                    
-		              'Gojo [Unleashed]',
-                    'Sukuna [Half Power]',
-		              'Rimuru',
-                    'Killua',
-                    'Ichigo',
-                    'Choso',
-                    'Natsu',
-                    'Gilgamesh',
-                    'Snow Bandit Leader',
-                    'Shank',
-                    'Monkey King',
-                    'Sand Man',
-                    'Bomb Man',
-                    'Bandit Leader',
-                    'Shadow',
-                    'Gojo',
-                    'Kashimo',
-                    'Sukuna',
-                    'Artoria',
-                    'Uraume',
-		    'Tatsumaki',
-      'Frieren'
-		    
-
-                }
-                
-                for _, v in pairs(game:GetService('Workspace').Lives:GetDescendants()) do
-                    if table.find(MonNames, v.Name) and v:FindFirstChild('HumanoidRootPart') and v.Humanoid.Health >= 1 then
-                       repeat
-
-                        CA()
-                            wait()   
-                            v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                            v.HumanoidRootPart.Transparency = 0.9
-                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,6)
-
-                        until _G.eam == false or v.Humanoid.Health <= 0
-                    end
-                end
-            end
-        end)
-    end
-end)
-
-	end   
-
-})
-
-local Tab = Window:MakeTab({
-	Name = "• Stats ",
-	Icon = "rbxassetid://16591537806",
-	PremiumOnly = false
-})
-
-Tab:AddToggle({
-	Name = "Auto UP Melee",
-	Default = false,
-	Callback = function(Melee)
-_G.Melee = Melee
-while _G.Melee do wait() 
+local Toggle2 = Tab4:AddToggle({
+  Name = "Melee",
+  Default = false,
+  Callback = function(ii)
+  _G.iii = ii
+while _G.iii do wait() 
     pcall(function()
     local args = {
     [1] = "Melee",
@@ -525,32 +717,30 @@ while _G.Melee do wait()
 game:GetService("ReplicatedStorage").Remotes.UpStats:FireServer(unpack(args))
     end)
     end
-	end    
+  end
 })
-
-Tab:AddToggle({
-	Name = "Auto UP Weapon",
-	Default = false,
-	Callback = function(Weapon)
-_G.Weapon = Weapon
-while _G.Weapon do wait() 
+local Toggle2 = Tab4:AddToggle({
+  Name = "Weapon",
+  Default = false,
+  Callback = function(ooo)
+  _G.oo = ooo
+while _G.oo do wait() 
     pcall(function()
-local args = {
+    local args = {
     [1] = "Weapon",
     [2] = 10
 }
 game:GetService("ReplicatedStorage").Remotes.UpStats:FireServer(unpack(args))
     end)
     end
-	end    
+  end
 })
-
-Tab:AddToggle({
-	Name = "Auto UP Defense",
-	Default = false,
-	Callback = function(Defense)
-_G.Defense = Defense
-while _G.Defense do wait() 
+local Toggle2 = Tab4:AddToggle({
+  Name = "Defense",
+  Default = false,
+  Callback = function(kk)
+  _G.kkk = kk
+while _G.kkk do wait() 
     pcall(function()
     local args = {
     [1] = "Defense",
@@ -559,15 +749,14 @@ while _G.Defense do wait()
 game:GetService("ReplicatedStorage").Remotes.UpStats:FireServer(unpack(args))
     end)
     end
-	end    
+  end
 })
-
-Tab:AddToggle({
-	Name = "Auto UP Demon Fruit",
-	Default = false,
-	Callback = function(Fruit)
-_G.Fruit = Fruit
-while _G.Fruit do wait() 
+local Toggle2 = Tab4:AddToggle({
+  Name = "Demon Fruit",
+  Default = false,
+  Callback = function(xxx)
+  _G.xx = xxx
+while _G.xx do wait() 
     pcall(function()
     local args = {
     [1] = "DemonFruit",
@@ -576,141 +765,80 @@ while _G.Fruit do wait()
 game:GetService("ReplicatedStorage").Remotes.UpStats:FireServer(unpack(args))
     end)
     end
-	end    
+  end
 })
 
-local Tab = Window:MakeTab({
-	Name = "| Teleport ",
-	Icon = "rbxassetid://7733765398",
-	PremiumOnly = false
-})
 
-Tab:AddButton({
-	Name = "Go to Traveling merchant",
-	Callback = function()
-for i,v in pairs(game:GetService("Workspace").NPC["Traveling merchant"]:GetDescendants()) do
-if v.ClassName == "ProximityPrompt" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame * CFrame.new(0,3,0)
-wait(0.1)
-fireproximityprompt(v,30)
-end
-      end
-  	end    
-})
-
-local Tab = Window:MakeTab({
-	Name = "• Teleport Shop",
-	Icon = "rbxassetid://16591537806",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "Shop"
-})
-
-    shop = {}
-for i ,v in pairs(game:GetService("Workspace").Shop:GetChildren()) do
-table.insert(shop,v.Name)
-end
-
-Tab:AddDropdown({
-	Name = "Select Shop",
-	Default = "1",
-	Options = shop,
-	Callback = function(ma)
-	shop = ma
-	end    
-})
-
-Tab:AddButton({
-	Name = "TP Shop",
-	Callback = function()
-      		for i,v in pairs(game:GetService("Workspace").Shop[shop]:GetDescendants()) do
-if v.ClassName == "ProximityPrompt" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame * CFrame.new(0,5,0)
-end
-      end
-  	end    
-
-})
-
-local Tab = Window:MakeTab({
-	Name = "• Teleport island",
-	Icon = "rbxassetid://16591537806",
-	PremiumOnly = false
-})
-
+Window:SelectTab(Tab5)
+local Section1 = Tab5:AddSection({"Teleport island"})
 map = {}
 for i ,v in pairs(game:GetService("Workspace").Locations:GetChildren()) do
 table.insert(map,v.Name)
 end
+local Dropdown = Tab5:AddDropdown({
+  Name = "Select island",
+  Description = "เลือกเกาะที่ต้องการจะวาปไป",
+  Options = map,
+  Default = nil,
+  Flag = "...",
+  Callback = function(mp)
+    map = mp
+  end
+}) 
 
-local Section = Tab:AddSection({
-	Name = "island"
-})
-
-Tab:AddDropdown({
-	Name = "Select Island",
-	Default = "1",
-	Options = map,
-	Callback = function(mt)
-	map = mt
-	end    
-})
-
-
-
-Tab:AddButton({
-	Name = "TP Island",
-	Callback = function()
+Tab5:AddButton({"TP island",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Locations[map].CFrame * CFrame.new(0,-100,0)
-  	end    
+	end
+})
+    shop = {}
+for i ,v in pairs(game:GetService("Workspace").Shop:GetChildren()) do
+table.insert(shop,v.Name)
+end
+local Section1 = Tab5:AddSection({"Teleport Shop"})
 
+local Dropdown = Tab5:AddDropdown({
+  Name = "Select Shop",
+  Description = "เลือกร้านค้าที่ต้องการจะวาปไป",
+  Options = shop,
+  Default = nil,
+  Flag = "...",
+  Callback = function(hp)
+    shop = hp
+  end
+}) 
+
+Tab5:AddButton({"TP Shop",function()
+for i,v in pairs(game:GetService("Workspace").Shop[shop]:GetDescendants()) do
+if v.ClassName == "ProximityPrompt" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame * CFrame.new(0,5,0)
+end
+      end
+	end
 })
 
-local Section = Tab:AddSection({
-	Name = " "
-})
-local Section = Tab:AddSection({
-	Name = " "
-})
-local Section = Tab:AddSection({
-	Name = " "
-})
-local Section = Tab:AddSection({
-	Name = " "
-})
-
-local Tab = Window:MakeTab({
-	Name = "• Players",
-	Icon = "rbxassetid://16591537806",
-	PremiumOnly = false
-})
-
+Window:SelectTab(Tab6)
+local Section1 = Tab6:AddSection({"Players"})
 Plr = {}
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(Plr,v.Name)
 end
+local Dropdown = Tab6:AddDropdown({
+  Name = "Select Players",
+  Description = "เลือกผู้เล่นที่ต้องการจะวาปไป",
+  Options = Plr,
+  Default = nil,
+  Flag = "...",
+  Callback = function(t)
+    PlayerTP = t
+  end
+}) 
 
-Tab:AddDropdown({
-	Name = "Select Players",
-	Default = "1",
-	Options = Plr,
-	Callback = function(t)
-		PlayerTP = t
-	end    
+Tab6:AddButton({"Teleport To Players",function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerTP].Character.HumanoidRootPart.CFrame
+	end
 })
 
-
-Tab:AddButton({
-	Name = "Teleport To Players Select",
-	Callback = function()
-      			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerTP].Character.HumanoidRootPart.CFrame
-  	end    
-})
-
-
-Tab:AddToggle({
+local hee = Tab6:AddToggle({
 	Name = "Loop Teleport To Players Select",
 	Default = false,
 	Callback = function(tp)
@@ -721,261 +849,49 @@ end
 	end    
 })
 
-local Tab = Window:MakeTab({
-	Name = "| Random Fruit",
-	Icon = "rbxassetid://7733765398",
-	PremiumOnly = false
-})
-
-local fruit = {
-"Not Select",
-"Dark Flame Fruit",
-"God Light Fruit"
+Window:SelectTab(Tab7)
+local Section1 = Tab7:AddSection({"Random fruit"})
+local Fruit = {
+    "Gem",
+    "Beli"
 }
+local Dropdown = Tab6:AddDropdown({
+  Name = "Select Random",
+  Description = "เลือกว่าจะสุ่มผลด้วยการใช้อะไร",
+  Options = Fruit,
+  Default = nil,
+  Flag = "...",
+  Callback = function(selectedFruit)
+    _G.FT = selectedFruit 
+  end
+}) 
 
-
-
-
-Tab:AddDropdown({
-	Name = "Select Fruit",
-	Default = "Not Select",
-	Options = fruit,
-	Callback = function(GG)
-	_G.FruitSelect = GG
-	end    
-})
-
-Tab:AddToggle({
-	Name = "Auto Random Fruit Gem Select",
+local hee = Tab7:AddToggle({
+	Name = "Random Fruit",
 	Default = false,
-	Callback = function(FSE)
-	_G.FruitRD = FSE
-	end    
-})
-
-Tab:AddToggle({
-	Name = "Auto Random Fruit Beli Select",
-	Default = false,
-	Callback = function(Fr)
-	_G.FruitB = Fr
-	end    
-})
-
-local FruitGem = -741.048889, 43.4787788, -1933.82019, -0.0251465552, 7.8026531e-08, 0.999683797, -1.09866749e-09, 1, -7.80788483e-08, -0.999683797, -3.06173398e-09, -0.0251465552
-
-local FruitBeil = 790.203735, 35.5073013, 1201.40369, 0.026754817, -8.37544611e-09, 0.999642015, 1.24128064e-07, 1, 5.05623188e-09, -0.999642015, 1.23948354e-07, 0.026754817
-
-spawn(function()
-                        while wait() do
-                            pcall(function()
-                              if _G.FruitRD then
-for i,v in pairs(game:GetService("Workspace").Shop:GetDescendants()) do
-if v.ClassName == "ProximityPrompt" then
-fireproximityprompt(v,30)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-741.048889, 43.4787788, -1933.82019, -0.0251465552, 7.8026531e-08, 0.999683797, -1.09866749e-09, 1, -7.80788483e-08, -0.999683797, -3.06173398e-09, -0.0251465552)
- if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(_G.FruitSelect)) then
-   break
-												end
-										end
-								end
-						end
-				end)
-		end
-end)
-
-spawn(function()
-                        while wait() do
-                            pcall(function()
-                              if _G.FruitB then
-for i,v in pairs(game:GetService("Workspace").Shop:GetDescendants()) do
-if v.ClassName == "ProximityPrompt" then
-fireproximityprompt(v,30)
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(790.203735, 35.5073013, 1201.40369, 0.026754817, -8.37544611e-09, 0.999642015, 1.24128064e-07, 1, 5.05623188e-09, -0.999642015, 1.23948354e-07, 0.026754817)
- if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(_G.FruitSelect)) then
-   break
-												end
-										end
-								end
-						end
-				end)
-		end
-end)
-
-
-
-spawn(function()
-while wait()do
- if _G.FruitRD then
-   if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(_G.FruitSelect)) then
-   wait(1)
-    OrionLib:MakeNotification({
-	Name = "You Got Fruit Select!",
-	Content = "WoW!!!!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-   end
-   end
-end
-end)
-
-spawn(function()
-while wait()do
- if _G.FruitB then
-   if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(_G.FruitSelect)) then
-   wait(1)
-      OrionLib:MakeNotification({
-	Name = "You Got Fruit Select!",
-	Content = "WoW!!!!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-   end
-   end
-end
-end)
-  
-local Tab = Window:MakeTab({
-	Name = "| Test",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddToggle({
-	Name = "Grabtools",
-	Default = false,
-	Callback = function(K)
-_G.F = K
-while _G.F do wait()
-for i,v in pairs(game:GetService("Workspace").ItemDrop:GetChildren()) do
-  v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-		  end
-  	end
-	end    
-})
-
-
-Tab:AddToggle({
-	Name = "Auto Chests TP",
-	Default = false,
-	Callback = function(d)
-_G.Fd = d
-while _G.Fd do wait()
-for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
-if v.ClassName == "ProximityPrompt" then
-fireproximityprompt(v,30)
-game.Players.LocalPlayer.Character.HumanoidRootPart .CFrame = v.Parent.CFrame
-end
-      end
+	Callback = function(randomFruit)
+	_G.Random = randomFruit
+   while _G.Random do
+        wait()
+      			        for i, v in pairs(game:GetService("Workspace").Shop:GetDescendants()) do
+            if v.ClassName == "ProximityPrompt" then
+                if _G.FT == "Beli" then
+                    fireproximityprompt(v, 30)
+                elseif _G.FT == "Gem" then
+                    fireproximityprompt(v, 30)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-589.146118, 36.5146637, -1950.28296, 0.0316599086, 1.00091079e-07, -0.999498725, -2.31954509e-08, 1, 9.94065417e-08, 0.999498725, 2.00366213e-08, 0.0316599086)
+                end
             end
+        end
+    end
 	end    
 })
 
-
-
-
-Tab:AddButton({
-	Name = "boost fps",
-	Callback = function()
-
-local decalsyeeted = true 
-local g = game
-local w = g.Workspace
-local l = g.Lighting
-local t = w.Terrain
-sethiddenproperty(l,"Technology",2)
-sethiddenproperty(t,"Decoration",false)
-t.WaterWaveSize = 0
-t.WaterWaveSpeed = 0
-t.WaterReflectance = 0
-t.WaterTransparency = 0
-l.GlobalShadows = 0
-l.FogEnd = 9e9
-l.Brightness = 0
-settings().Rendering.QualityLevel = "Level01"
-for i, v in pairs(w:GetDescendants()) do
-    if v:IsA("BasePart") and not v:IsA("MeshPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    elseif (v:IsA("Decal") or v:IsA("Texture")) and decalsyeeted then
-        v.Transparency = 1
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-        v.Lifetime = NumberRange.new(0)
-    elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-       v.BlastRadius = 1
-    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-        v.Enabled = false
-    elseif v:IsA("MeshPart") and decalsyeeted then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-        v.TextureID = 10385902758728957
-    elseif v:IsA("SpecialMesh") and decalsyeeted  then
-        v.TextureId=0
-    elseif v:IsA("ShirtGraphic") and decalsyeeted then
-        v.Graphic=0
-    elseif (v:IsA("Shirt") or v:IsA("Pants")) and decalsyeeted then
-        v[v.ClassName.."Template"]=0
-    end
-end
-for i = 1,#l:GetChildren() do
-    e=l:GetChildren()[i]
-    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-        e.Enabled = false
-    end
-end
-w.DescendantAdded:Connect(function(v)
-    wait()--prevent errors and shit
-   if v:IsA("BasePart") and not v:IsA("MeshPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-        v.Transparency = 1
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-        v.Lifetime = NumberRange.new(0)
-    elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-        v.BlastRadius = 1
-    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-        v.Enabled = false
-    elseif v:IsA("MeshPart") and decalsyeeted then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-        v.TextureID = 10385902758728957
-    elseif v:IsA("SpecialMesh") and decalsyeeted then
-        v.TextureId=0
-    elseif v:IsA("ShirtGraphic") and decalsyeeted then
-        v.ShirtGraphic=0
-    elseif (v:IsA("Shirt") or v:IsA("Pants")) and decalsyeeted then
-        v[v.ClassName.."Template"]=0
-              end
-        end)
-  	end    
+Tab99:AddDiscordInvite({
+  Name = "Siron Hub",
+  Logo = "rbxassetid://15793473802",
+  Invite = "https://discord.gg/7aR7kNVt4g"
 })
 
-Tab:AddToggle({
-	Name = "Auto Haki",
-	Default = false,
-	Callback = function(Haki)
-_G.AutoHaki = Haki
-while _G.AutoHaki do wait()
-pcall(function()
-local aa = game.Players.LocalPlayer.Character.HumanoidRootPart
 
-if not aa:FindFirstChild("Haki") then
-local args = {
-    [1] = "BusoHaki"
-}
-game:GetService("ReplicatedStorage").Remotes.SkillHolder:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "KenHaki"
-}
-game:GetService("ReplicatedStorage").Remotes.SkillHolder:FireServer(unpack(args))
-end
-end)
-end
-
-	end    
-})
-
+-- Simple example ;)
+-- More in soon...
